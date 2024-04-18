@@ -175,16 +175,52 @@ h6 {
 .nav-menu a,
 .nav-menu a:focus {
   display: flex;
+  position: relative;
+  overflow: hidden;
   align-items: center;
   color: #a8a9b4;
   padding: 12px 15px;
+  border-radius: 5px;
   margin-bottom: 8px;
   transition: 0.3s;
   font-size: 15px;
 }
 
+
+.nav-menu a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(76,76,166,.8); 
+  transition: width 0.3s ease; 
+  z-index: -1;
+}
+
+.nav-menu a:hover::before,
+.nav-menu .active::before,
+.nav-menu .active:focus::before {
+  width: 100%; 
+}
+
+.nav-menu a:hover,
+.nav-menu .active,
+.nav-menu .active:focus {
+  color: #000; 
+}
+
+.nav-menu a:hover i,
+.nav-menu .active i,
+.nav-menu .active:focus i {
+  color: #149ddd; 
+}
+
 .nav-menu a i,
 .nav-menu a:focus i {
+  position: relative;
+  z-index: 1;
   font-size: 24px;
   padding-right: 8px;
   color: #6f7180;
@@ -196,6 +232,7 @@ h6 {
 .nav-menu li:hover>a {
   text-decoration: none;
   color: #fff;
+  
 }
 
 .nav-menu a:hover i,
@@ -241,7 +278,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url("../img/homepage.webp") center;
   background-size: cover;
 }
 
@@ -347,6 +384,7 @@ section {
 # About
 --------------------------------------------------------------*/
 .about .content h3 {
+  font-family: England Hand DB;
   font-weight: 700;
   font-size: 26px;
   color: #173b6c;
