@@ -48,13 +48,13 @@ function showdog(who, delay, id) {
   }
   else {//狗狗處於等待中
     /*改飢餓狀態*/
-    thedog[who].src = "assets/img/on.png";
+    thedog[who].src = "assets/img/on.webp";
     thedog[who].title = "hungry";
     thedog[who].alt = id;
-    thedog[who].style.backgroundColor = "red";
+    thedog[who].style.backgroundColor = "lightblue";
 
     wait[id] = setTimeout(function () {//N秒後回到等待狀態，並記下此事為wait[id]
-      thedog[who].src = "assets/img/state.png";
+      thedog[who].src = "assets/img/Bro-image.jpg";
       thedog[who].title = "state";
       thedog[who].style.backgroundColor = null;
     }, delay * 1000);
@@ -96,9 +96,9 @@ function keyboard() {//鍵盤動作轉為who對象編號
 function getcombo(who) {//每次按下指定鍵時
   if (thedog[who].title == "hungry" && flag) {//如果是飢餓狀態
     /*改餵食狀態*/
-    thedog[who].src = "assets/img/off.png";
+    thedog[who].src = "assets/img/off.jpg";
     thedog[who].title = "eating";
-    thedog[who].style.backgroundColor = "green";
+    thedog[who].style.backgroundColor = "lightgreen";
     id = thedog[who].alt;
     clearTimeout(wait[id]); //取消之前的倒數恢復
 
@@ -108,7 +108,7 @@ function getcombo(who) {//每次按下指定鍵時
 
     /*1秒後改等待狀態*/
     setTimeout(function () {
-      thedog[who].src = "assets/img/state.png";
+      thedog[who].src = "assets/img/Bro-image.jpg";
       thedog[who].title = "state";
       thedog[who].alt = null;
       thedog[who].style.backgroundColor = null;

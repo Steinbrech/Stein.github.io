@@ -560,6 +560,8 @@ section {
   border: 4px solid #777;
   line-height: 0;
   background-color: yellow;
+  object-fit: fill;
+  align-items: stretch;
 }
 
 .control {
