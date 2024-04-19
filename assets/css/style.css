@@ -278,8 +278,10 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/homepage.webp") center;
-  background-size: cover;
+  background-image: url("../img/game/ready.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; 
 }
 
 #hero:before {
@@ -507,18 +509,23 @@ section {
 /*--------------------------------------------------------------
 # Games
 --------------------------------------------------------------*/
-
+.game{
+  background-image: url("../img/game/chiikawa.jpg") ;
+  background-size: 75% auto; 
+  background-position: center center;
+  background-repeat: no-repeat; 
+}
 .game .title {
   padding-bottom: 30px;
 }
 
 .game .title h2 {
-  font-size: 32px;
+  font-size: 50px;
   font-weight: bold;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
+  color: black  ;
 }
 
 .game .title h2::after {
@@ -532,7 +539,9 @@ section {
 }
 
 .game .title p {
+  font-size: 24px;
   margin-bottom: 0;
+  color: crimson;
 }
 
 .game .container {
@@ -542,26 +551,25 @@ section {
   text-align: center;
 }
 
-.content {
+.content{
   display: inline-block;
   margin: 0 auto;
   top: 10%;
   position: relative;
 }
 
-.row {
+.game .row {
   display: flex;
   justify-content: center;
+  opacity: 0.9;
 }
 
 .cell {
   width: 100px;
   height: 100px;
-  border: 4px solid #777;
+  border: 4px solid #173b6c;
   line-height: 0;
   background-color: yellow;
-  object-fit: fill;
-  align-items: stretch;
 }
 
 .control {
@@ -633,8 +641,12 @@ section {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* 保证图像居中 */
-  object-fit: contain; 
+  transform: translate(-50%, -50%); /* 保证图像居中 */  
+  object-fit: cover; 
+}
+
+.portfolio .portfolio-wrap:hover {
+  transform: scale(1.1); 
 }
 
 .portfolio .portfolio-wrap::before {
@@ -828,6 +840,7 @@ section {
 
 .testimonials .testimonial-item .testimonial-img {
   width: 90px;
+  height: 90px;
   border-radius: 50%;
   margin: 0 auto;
 }
