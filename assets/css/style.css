@@ -468,7 +468,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
@@ -620,6 +620,21 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  width: 100%; /* 容器宽度，你可以根据需要调整或使用固定值 */
+  height: auto; /* 用于创建一个比例容器 */
+  padding-bottom: 75%; /* 这将决定容器的高度，75% 代表宽高比是 4:3 */
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-wrap img {
+  width: 80%; /* 设置图像的固定宽度 */
+  height: auto; /* 设置图像的固定高度 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 保证图像居中 */
+  object-fit: contain; 
 }
 
 .portfolio .portfolio-wrap::before {

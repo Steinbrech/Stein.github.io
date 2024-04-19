@@ -48,7 +48,7 @@ function showdog(who, delay, id) {
   }
   else {//狗狗處於等待中
     /*改飢餓狀態*/
-    thedog[who].src = "assets/img/on.webp";
+    thedog[who].src = "assets/img/game/on2.jpg";
     thedog[who].title = "hungry";
     thedog[who].alt = id;
     thedog[who].style.backgroundColor = "lightblue";
@@ -96,7 +96,7 @@ function keyboard() {//鍵盤動作轉為who對象編號
 function getcombo(who) {//每次按下指定鍵時
   if (thedog[who].title == "hungry" && flag) {//如果是飢餓狀態
     /*改餵食狀態*/
-    thedog[who].src = "assets/img/off.jpg";
+    thedog[who].src = "assets/img/game/off2.jpg";
     thedog[who].title = "eating";
     thedog[who].style.backgroundColor = "lightgreen";
     id = thedog[who].alt;
