@@ -943,7 +943,91 @@ section {
   padding-bottom: 130px;
 }
 
-.contact .info {
+.contact .meme-canvas {
+  display: inline-block;
+  border: 2px solid #ccc;
+  position: relative;
+  /* 設定想要的寬度和高度 */
+  width: 300px; 
+  height: 300px;
+}
+
+#meme-image {
+  display: block;
+  width: 100%; /* 圖片寬度調整為容器的100% */
+  height: auto; /* 圖片高度自動 */
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contact .meme-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact .meme-text {
+  position: absolute; /* 文字使用絕對定位 */
+  width: 100%; /* 文字元素寬度設為容器的100% */
+  text-align: center; /* 文字居中對齊 */
+  color: #FFF; /* 文字顏色 */
+  font-size: 2em; /* 文字大小 */
+  font-weight: bold; /* 文字粗細 */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.75); /* 文字陰影 */
+  left: 0; /* 與左邊距離 */
+}
+.contact .meme-generator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#meme-image {
+  max-width: 500px;
+  max-height: 500px;
+}
+
+#top-text {
+  top: 50%; /* 初始位置，稍後由 JavaScript 覆蓋 */
+}
+
+#bottom-text {
+  bottom: 50%; /* 初始位置，稍後由 JavaScript 覆蓋 */
+}
+
+#top-text-slider,
+#bottom-text-slider{
+  width:300px;
+}
+
+#download-meme {
+  padding: 10px;
+  width: 150px;
+  background-color: #122f57;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+#download-meme:hover {
+  background-color: #149ddd;
+}
+/* 調整文本輸入框樣式 */
+input[type='text'] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/* .contact .info {
   padding: 30px;
   background: #fff;
   width: 100%;
@@ -1108,7 +1192,7 @@ section {
 
 .contact .php-email-form button[type=submit]:hover {
   background: #37b3ed;
-}
+} */
 
 @keyframes animate-loading {
   0% {
