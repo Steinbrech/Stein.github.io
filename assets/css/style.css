@@ -510,11 +510,26 @@ section {
 # Games
 --------------------------------------------------------------*/
 .game{
-  background-image: url("../img/game/chiikawa.jpg") ;
-  background-size: 75% auto; 
+  position: relative; /* Added to ensure the absolute positioning is relative to .game */
+  z-index: 1; /* Ensure .game is above the pseudo-element */
+}
+
+.game .container::before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: -1; /* Ensure this is behind the content */
+  background-image: url("../img/game/chiikawa.jpg"); /* Assuming the path is correct */
+  background-size: cover; 
   background-position: center center;
   background-repeat: no-repeat; 
 }
+
 .game .title {
   padding-bottom: 30px;
 }
@@ -561,7 +576,6 @@ section {
 .game .row {
   display: flex;
   justify-content: center;
-  opacity: 0.9;
 }
 
 .cell {
@@ -585,7 +599,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Portfolio
+# Meme examples
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
   margin-bottom: 30px;
@@ -627,26 +641,30 @@ section {
   transition: 0.3s;
   position: relative;
   overflow: hidden;
-  z-index: 1;
+  z-index: 0;
   width: 100%; /* 容器宽度，你可以根据需要调整或使用固定值 */
   height: auto; /* 用于创建一个比例容器 */
   padding-bottom: 75%; /* 这将决定容器的高度，75% 代表宽高比是 4:3 */
   position: relative;
   overflow: hidden;
+  border: 3px solid rgba(76,76,166,.8);
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(76,76,166,.5);
 }
 
 .portfolio .portfolio-wrap img {
   width: 80%; /* 设置图像的固定宽度 */
-  height: auto; /* 设置图像的固定高度 */
+  height: auto; /* 自動調整，保持圖像原尺寸比 */
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 1;
   transform: translate(-50%, -50%); /* 保证图像居中 */  
   object-fit: cover; 
 }
 
 .portfolio .portfolio-wrap:hover {
-  transform: scale(1.1); 
+   transform: scale(1.1); /*hover的時候圖像放大 */
 }
 
 .portfolio .portfolio-wrap::before {
@@ -773,7 +791,8 @@ section {
 # Services
 --------------------------------------------------------------*/
 .services .icon-box {
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 .services .icon {
